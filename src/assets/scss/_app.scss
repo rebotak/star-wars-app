@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  background-color: white;
+  min-height: calc(100vh - 8px);
+  box-sizing: border-box;
+}
+
+.clickable{
+	cursor: pointer;
+}
+
+.mobile-container {
+  width: 100%;
+  max-width: 540px;
+  padding: 5px 10px;
+  margin: 0 auto;
+}
