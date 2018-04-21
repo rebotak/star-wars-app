@@ -1,0 +1,62 @@
+.people-page{
+	h1.title {
+		color: yellow;
+		text-shadow: 0 0 5px rgba(255, 219, 19, 0.6);
+		font-size: 20px;
+		font-family: monospace;
+		vertical-align: center;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	}
+	.yellow-stroke{
+		margin: 0 20px;
+		font-family: monospace;
+		-webkit-text-stroke: 3px rgb(255, 255, 0);
+		color: transparent;
+		font-size: 50px;
+		text-shadow: none;
+		font-style: italic;
+		text-shadow: 0 0 15px rgba(249, 255, 74, 0.6);
+	}
+	.people-card-wrapper {
+	  display: flex;
+	  flex-wrap: wrap;
+	  align-items: stretch;
+	  justify-content: start;
+	  padding-top: 50px;
+	}
+	.person.card {
+		border: none;
+    // flex: 1;
+    flex-basis: 210px;
+    color: white;
+    background: black;
+    margin: 20px 10px;
+    text-align: left;
+		&:hover {
+	    background: black;
+	    box-shadow: 0 0 20px rgba(28, 237, 225, 0.33);
+		}
+		.card-body {
+		  position: relative;
+		  padding-bottom: 50px;
+			.btn.btn-details {
+			  position: absolute;
+			  bottom: 20px;
+			  width: calc(100% - 20px);
+			  left: 0;
+			  right: 0;
+			  margin: 0 auto;
+			}
+		}
+    .fake-img{
+    	height: 120px;
+    	display: block;
+    }
+		.card-title {
+		  font-weight: bold;
+		  color: yellow;
+		}
+	}
+}

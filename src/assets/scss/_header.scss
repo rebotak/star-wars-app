@@ -1,0 +1,47 @@
+.header{
+  .navbar{
+    &.navbar-dark {
+      background: black;
+      padding: 0;
+      position: fixed;
+      top: 0;
+      color: white;
+      width: 100%;
+      z-index: 999;
+      box-shadow: 0 0 10px rgba(254, 255, 0, 0.7607843137254902);
+      .navbar-nav{
+        .nav-link{
+          color: darken(yellow,20);
+          &:hover,
+          &:active,
+          &:focus{
+            color: lighten(yellow,10);
+          }
+        }
+      }
+      .navbar-toggler{
+        border: none;
+      }
+      .navbar-brand{
+        img{
+          height: 60px;
+        }
+      }
+    }
+    .mobile-container {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      margin: 0 auto;
+    }
+  }
+  .stucker{
+    height: 71px;
+    display: block;
+    background: transparent;
+    width: 100%;
+  }
+}

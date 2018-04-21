@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const client = axios.create({
-  baseURL: `https://post-method-a9c8d.firebaseio.com`,
+  baseURL: `https://swapi.co/api`,
   responseType: 'json'
 });
 
