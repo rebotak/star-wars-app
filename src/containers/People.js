@@ -3,15 +3,16 @@ import {load as loadPeople} from '../reducers/people';
 import {connect} from 'react-redux';
 import Loader from '../components/Loader';
 import Header from '../components/Header';
+import PageList from '../components/Pagination';
 import _ from 'lodash';
+import {Link} from 'react-router-dom';
+
 import {
   Card,
-  // CardImg,
   CardText,
   CardBody,
   CardTitle,
-  CardSubtitle,
-  Button
+  CardSubtitle
 } from 'reactstrap';
 
 @connect(
@@ -29,39 +30,58 @@ class People extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      mountedPage: 1,
     }
   }
-  componentDidMount(){
 
+  componentDidMount(){
   }
 
   componentWillMount() {
-    if (this.props.peopleLoaded) {
+    let query = new URLSearchParams(this.props.location.search);
+    let currentPage = query.get('page');
+    if (currentPage) {
+      this.setState({mountedPage: Number(currentPage)});
+      this.props.loadPeople(currentPage);
+      // console.log(currentPage);
+      // console.log(this.state.mountedPage);
+      // .then(res => {
+      //  console.log(res.payload.data)
+      // })
     }else{
-      this.props.loadPeople(7).then(res => {
-        console.log(res.payload.data)
-      })
+      this.props.loadPeople(1)
     }
   }
 
   render() {
+
     const {
       peopleData,
       peopleLoading,
       peopleLoaded,
       peopleList,
-    } = this.props
+    } = this.props;
+    const {
+      mountedPage
+    } = this.state;
+    // const query = new URLSearchParams(this.props.location.search);
+    // const currentPage = query.get('page');
 
     return (
       <div className="people-page">
         <Header></Header>
         <div className="container">
           <h1 className="title">List of <span className="yellow-stroke">Star Wars</span> characters</h1>
-          {peopleLoaded &&
-            <h6>Showing {peopleList.length} of {peopleData.count} </h6>
-          }
+          <PageList
+            count={87}
+            mountedPage={mountedPage}
+            perPage={10}
+          />
           {peopleLoading &&
             <Loader/>
+          }
+          {peopleLoaded && !peopleLoading &&
+            <h6>Showing {peopleList.length} of {peopleData.count} </h6>
           }
           {!peopleLoading && peopleData && peopleLoaded && peopleList &&
             <div className="people-card-wrapper">
@@ -78,7 +98,7 @@ class People extends Component {
                       Eye Color: {person.eye_color}<br/>
                       Hair Color: {person.hair_color}<br/>
                       Films: {person.films.length}</CardText>
-                      <Button outline  size="sm" block className="btn-details" color="info">Details</Button>
+                      <Link to={`/?page=${index}`} className="btn-details btn btn-outline-info btn-sm btn-block">Details</Link>
                     </CardBody>
                   </Card>
                 )
