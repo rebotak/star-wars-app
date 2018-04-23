@@ -1,7 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-made for ruang guru front-end assessment.
-
 build using:
 - reactjs,
 - redux,

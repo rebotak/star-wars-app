@@ -1,6 +1,5 @@
 import React from 'react';
 import './assets/scss/main.css';
-import './assets/scss/font-awesome.min.css';
 import People from './containers/People';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
