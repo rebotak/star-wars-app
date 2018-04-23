@@ -1,6 +1,6 @@
 This app was build for Ruang Guru's Front-end Assesment test.
 
-Deployed on heroku: https://rbtk-star-wars-app.herokuapp.com
+Deployed on heroku: [https://rbtk-star-wars-app.herokuapp.com](https://rbtk-star-wars-app.herokuapp.com)
 
 build using:
 - reactjs,
