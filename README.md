@@ -7,8 +7,7 @@ build using:
 - redux,
 - axios,
 - react-router v4,
-- react-axios-middle-ware,
-- redux-form
+- react-axios-middle-ware
 
 You will be required to install Node JS and npm before starting. Make sure you already have them installed.
 
