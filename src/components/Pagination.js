@@ -7,7 +7,6 @@ import createHistory from "history/createBrowserHistory"
 
 @connect(
   (state) => ({
-    peopleData: state.people.data,
     peopleLoading: state.people.loading,
   }),{
     loadPeople,
@@ -38,19 +37,22 @@ class PageList extends Component {
   }
 
   loadPrev(){
+    const history = createHistory();
   	this.props.loadPeople(this.state.pageNumber - 1)
   	this.setState({pageNumber: this.state.pageNumber - 1});
+    history.push(`/?page=${this.state.pageNumber -1}`);
   }
 
   loadNext(){
-  	this.props.loadPeople(this.state.pageNumber + 1)
-  	this.setState({pageNumber: this.state.pageNumber + 1});
+    const history = createHistory();
+    this.props.loadPeople(this.state.pageNumber + 1)
+    this.setState({pageNumber: this.state.pageNumber + 1});
+    history.push(`/?page=${this.state.pageNumber + 1}`);
   }
 
   render() {
 
 		const {
-			peopleData,
 			peopleLoading,
 			count,
 			perPage
