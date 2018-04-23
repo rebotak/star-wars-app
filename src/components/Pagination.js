@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
-import _ from 'lodash';
+// import _ from 'lodash';
 import {load as loadPeople} from '../reducers/people';
 import {connect} from 'react-redux';
 import createHistory from "history/createBrowserHistory"
@@ -71,7 +71,7 @@ class PageList extends Component {
 	        <PaginationItem disabled={(pageNumber === 1) || peopleLoading}>
 	          <PaginationLink previous href="#" onClick={this.loadPrev.bind(this)}/>
 	        </PaginationItem>
-	        {_.map(paginatnionItem, p => {
+	        {paginatnionItem.map(p => {
 	        	return(
 	        		<li className={'page-item '+ ((p === pageNumber)?'active ':'') +((peopleLoading)?'disabled':'') } key={p}>
 	        			<span href="#" className="page-link" onClick={this.loadPage.bind(this,p)}>

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "author": "Pais Rebotak <rebotak@gmail.com> (http://about.me/rebotak)",
   "email": "rebotak@gmail.com",
+  "homepage": "http://rebotak.github.io/star-wars-app",
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
@@ -31,7 +32,6 @@
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
-    "lodash": "^4.17.5",
     "node-sass-chokidar": "^1.1.0",
     "npm-run-all": "^4.1.2",
     "numeral": "^2.0.6",
@@ -43,7 +43,6 @@
     "react": "^16.3.2",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.3.2",
-    "resolve": "1.6.0",
     "react-medium-image-zoom": "^3.0.10",
     "react-redux": "^5.0.7",
     "react-router-config": "^1.0.0-beta.4",
@@ -56,8 +55,9 @@
     "redux-async-connect": "^1.0.0-rc4",
     "redux-axios-middleware": "^4.0.0",
     "redux-connect": "^7.0.0",
-    "redux-form": "^7.3.0",
     "redux-thunk": "^2.2.0",
+    "resolve": "1.6.0",
+    "source-map-explorer": "^1.5.0",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.6.2",
@@ -72,6 +72,7 @@
     "ssh": "git@bitbucket.org:rebotak/star-wars-app.git"
   },
   "scripts": {
+    "analyze": "source-map-explorer build/static/js/main.*",
     "start-js": "node scripts/start.js",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "node scripts/build.js",

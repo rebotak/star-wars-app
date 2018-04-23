@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Loader from '../components/Loader';
 import Header from '../components/Header';
 import PageList from '../components/Pagination';
-import _ from 'lodash';
+// import _ from 'lodash';
 import {
   Button,
   Modal,
@@ -112,7 +112,7 @@ class People extends Component {
           }
           {!peopleLoading && peopleData && peopleLoaded && peopleList &&
             <div className="people-card-wrapper">
-              {_.map(peopleList, (person,index) => {
+              {peopleList.map((person,index) => {
                 return(
                   <Card className="person clickable" key={person.birth_year+index}>
                     <div className="fake-img" width="100%" style={{'backgroundColor': '#'+(0x1000000+(Math.random())*0xffffff).toString(16).substr(1,6)}}></div>
