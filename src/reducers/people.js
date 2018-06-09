@@ -43,7 +43,10 @@ export function load(pageNumber) {
     types: [LOAD, LOAD_SUCCESS, LOAD_FAIL],
     payload: {
       request: {
-        url: `/people?page=${pageNumber}`,
+        url: `/people?`,
+        params:{
+          page: pageNumber,
+        },
         method: 'get'
       }
     }
